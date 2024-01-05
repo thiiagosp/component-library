@@ -1,0 +1,31 @@
+import { Meta, Title, Subtitle } from "@storybook/blocks";
+import { Stack, Grid, Typography } from "@mui/material";
+import { colors } from "./";
+
+<Meta title="Styles/Colors" />
+
+<Title>Colors</Title>
+
+<Stack>
+  {Object.entries(colors).map(([name, colors]) => (
+    <>
+      <Typography variant="h4" sx={{mb: 4, mt: 8, textTransform: "capitalize" }}>{name}</Typography>
+      <Grid container spacing={2}>
+        {Object.entries(colors).map(([key, value]) => (
+          <Grid item xs={6}>
+            <div
+              style={{
+                backgroundColor: value,
+                height: "50px",
+              }}
+            />
+            <Stack direction="row" justifyContent="space-between" sx={{ p: 1 }}>
+              <Typography variant="body4">{key}</Typography>
+              <Typography variant="body4">{value}</Typography>
+            </Stack>
+          </Grid>
+        ))}
+      </Grid>
+    </>
+  ))}
+</Stack>

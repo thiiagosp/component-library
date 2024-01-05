@@ -1,0 +1,11 @@
+import { Meta, Title } from "@storybook/blocks";
+import { Unstyled, Typography as MuiType } from "@mui/material";
+import { typography } from "./";
+
+<Meta title="Styles/Typography" />
+
+<Title>Typography</Title>
+
+{Object.entries(typography).map(([name, value]) => (
+<MuiType sx={value} mb={4}>{name} / {value.fontFamily} / {value.fontWeight} / {value.fontSize}</MuiType>
+))}
